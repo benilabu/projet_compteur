@@ -31,7 +31,7 @@ class Mycompteur extends Component{
             <Card  className="mb-2">
             <Card.Header><h1> Compteur</h1></Card.Header>
                  <Card.Body>
-                    <Card.Title>     <h1>Count: {this.state.count}</h1> </Card.Title>
+                    <Card.Title>     <h1 id="compteur-value">Count: {this.state.count}</h1> </Card.Title>
                       <Card.Text>
                         <Button variant="success"  onClick={()=> this.ajouter()}>Ajouter  1</Button>
                         <Button variant="danger"  onClick={this.supprimer.bind(this)}>Enlever 1</Button>

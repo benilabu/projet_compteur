@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Instructions au lancement des tests pour le projet compteur
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Sommaire :
+1. Installation du projet
+2. Lancement du projet et des tests
 
-## Available Scripts
 
-In the project directory, you can run:
+Le projet a été réalisé avec [ReactJS](https://fr.reactjs.org/) et [Selenium](https://www.selenium.dev/).
+Celui-ci est composé de 2 dossiers :
+```
+total 12K
+drwxr-xr-x 5 antoine antoine 4,0K déc.   4 23:39 ReactApp
+-rw-r--r-- 1 antoine antoine  125 déc.   5 16:03 README.md
+drwxr-xr-x 3 antoine antoine 4,0K déc.   4 23:41 SeleniumTests
+```
 
-### `npm start`
+Le premier, nommé `ReactApp`, contient le projet web compteur. Ce projet est une simple page web affichant un nombre qui peut être incrémenté ou décrémenté en appuyant sur les 2 boutons prévus à cet effet.  
+Le second dossier, nommé `SeleniumTests`, contient tout le nécessaire afin de lancer une suite de tests sur le projet compteur.   
+Ci-dessous sont décrites les instructions afin d'installer et de lancer le projet ainsi que ses tests.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Testé sur les versions :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+| OS                  | Arch          | Node version            | NPM version            |Chromedriver version   |
+| --------------------|:-------------:| -----------------------:|-----------------------:|----------------------:|
+| ArchLinux (Manjaro) | x64           | Node v16.13.0 (Gallium) | 8.1.0                  |96.0.4664.45           |
 
-### `npm test`
+## 1. Installation du projet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tout d'abord, il faut installer [chromedriver](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/).
 
-### `npm run build`
+> Note : Veillez à prendre la même version que celle de votre navigateur !
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Une fois chromedriver installé, il vous faut installer le projet.
+Pour installer le projet, il vous faudra aller dans les 2 dossiers et lancer la commande :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> Note : Si NPM vous notifie des erreurs de sécurité, vous pouvez les ignorer, elles ne concernent que les paquets de développement de ReactJS
 
-### `npm run eject`
+Si des problèmes subsistent, contactez Antoine Tréboutte et/ou Bénédict Labu :
+- antoine.treboutte@uqar.ca
+- benedict.labu@uqar.ca
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 2. Lancement du projet et des tests
+### 2.1 Lancement de l'application ReactJS
+Tout d'abord, il faut lancer le projet en ReactJS, pour cela, allez dans le dossier `ReactApp` et entrez la commande :
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> Note : Si ReactJS vous ouvre un navigateur, vous pouvez le fermer, il n'est pas nécessaire pour les tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Un affichage semblable à celui ci-dessous devrait apparaître :
+```
+Compiled with warnings.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+src/App.js
+  Line 1:8:  'logo' is defined but never used  no-unused-vars
 
-## Learn More
+src/compteur.js
+  Line 1:8:   'react' is defined but never used  no-unused-vars
+  Line 3:18:  'Row' is defined but never used    no-unused-vars
+  Line 3:23:  'Col' is defined but never used    no-unused-vars
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+src/index.js
+  Line 5:8:  'App' is defined but never used  no-unused-vars
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
 
-### Code Splitting
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Si ce message s'affiche, bravo ! Votre application ReactJS est lancée !
 
-### Analyzing the Bundle Size
+### 2.2 Lancement des tests Selenium
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Pour lancer les tests Selenium, rien de plus simple. Il vous faudra vous rendre dans le dossier `SeleniumTests` et lancer la commande :
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Une page s'ouvrira alors et exécutera les tests écrits dans le fichier `index.js`.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Si aucune erreur n'est apparue, bravo ! Vous avez fini l'exécution des tests et du projet !
