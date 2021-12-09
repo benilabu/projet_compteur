@@ -20,12 +20,19 @@ Ci-dessous sont décrites les instructions afin d'installer et de lancer le proj
 
 Testé sur les versions :
 
-| OS                  | Arch          | Node version            | NPM version            |
-| --------------------|:-------------:| -----------------------:|-----------------------:|
-| ArchLinux (Manjaro) | x64           | Node v16.13.0 (Gallium) | 8.1.0                  |
+| OS                  | Arch          | Node version            | NPM version            |Chromedriver version   |
+| --------------------|:-------------:| -----------------------:|-----------------------:|----------------------:|
+| ArchLinux (Manjaro) | x64           | Node v16.13.0 (Gallium) | 8.1.0                  |96.0.4664.45           |
 
 ## 1. Installation du projet
+
+Tout d'abord, il faut installer [chromedriver](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/).
+
+> Note : Veillez à prendre la même version que celle de votre navigateur !
+
+Une fois chromedriver installé, il vous faut installer le projet.
 Pour installer le projet, il vous faudra aller dans les 2 dossiers et lancer la commande :
+
 ```bash
 npm install
 ```
